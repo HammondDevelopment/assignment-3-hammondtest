@@ -4,9 +4,12 @@ python:
 cache: pip
 install: pip install -r requirements.txt
 script: python tests.py
+addons:
+  ssh_known_hosts:
+  - alfred.eecs.northwestern.edu
 before_install:
 - eval "$(ssh-agent -s)"
 - chmod 600 ./deploy_key
-- echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- echo -e "Host alfred.eecs.northwestern.edu\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./deploy_key
 - ssh -i ./deploy_key fjl2202@alfred.eecs.northwestern.edu pwd
