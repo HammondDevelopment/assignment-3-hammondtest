@@ -15,8 +15,7 @@ addons:
 after_success:
   - export SSHPASS=$SSH_PASS
   - sshpass -e scp assignment3.py $SSH_USER@$SSH_HOST:$SSH_PATH -o stricthostkeychecking=no
-  - sshpass -e ssh $SSH_USER@$SSH_HOST mkdir build
-  - sshpass -e ssh $SSH_USER@$SSH_HOST assignment3/script.sh
+  - sshpass -e ssh $SSH_USER@$SSH_HOST ./assignment3/script.sh
 cache: pip
 install: "pip install -r requirements.txt"
 script: "python tests.py"
