@@ -12,4 +12,4 @@ before_install:
 - chmod 600 ./deploy_key
 - echo -e "Host alfred.eecs.northwestern.edu\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./deploy_key
-- ssh -i ./deploy_key fjl2202@alfred.eecs.northwestern.edu scp assignment3.py fjl2202@alfred.eecs.northwestern.edu:assignment3/
+- scp -i deploy_key assignment3.py fjl2202@alfred.eecs.northwestern.edu:assignment3
