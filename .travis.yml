@@ -13,5 +13,5 @@ before_install:
 - echo -e "Host alfred.eecs.northwestern.edu\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./deploy_key
 - scp -i deploy_key assignment3.py fjl2202@alfred.eecs.northwestern.edu:assignment3
-- ssh -i deploy_key fjl2202@alfred.eecs.northwestern.edu bash assignment3/runtests
+- ssh -i deploy_key fjl2202@alfred.eecs.northwestern.edu cd assignment3 && python test.py
 - ssh -i deploy_key fjl2202@alfred.eecs.northwestern.edu rm assignment3/assignment3.py
