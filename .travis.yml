@@ -8,7 +8,7 @@ addons:
   ssh_known_hosts:
   - alfred.eecs.northwestern.edu
 before_install:
-- openssl aes-256-cbc -K $encrypted_f3d217746866_key -iv $encrypted_f3d217746866_iv -in deploy_key.enc -out ./deploy_key -d
+- openssl aes-256-cbc -K $encrypted_f3d217746866_key -iv $encrypted_f3d217746866_iv -in deploy_key.enc -out deploy_key -d
 - eval "$(ssh-agent -s)"
 - chmod 600 ./deploy_key
 - echo -e "Host alfred.eecs.northwestern.edu\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
